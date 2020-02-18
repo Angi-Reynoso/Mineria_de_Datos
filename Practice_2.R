@@ -1,27 +1,62 @@
-# Funtions in R
+#Functions in R
+#Numerical Functions  
+#1. abs( ):  
+?abs()
+abs(-7)
+abs(7)
 
-### Numerical Functions  
-1. abs( ):  
-2. ceiling( ):  
-3. floor( ):  
-4. trunc( ):
-5. max( ):  
-6. min( ):
-7. unique( ):   
-8. round( ):  
-9. signif( ):
+#2. ceiling( ):  
+?ceiling()
+ceiling(5.9)
+ceiling(2.9)
 
-### Character Functions  
-10. substr(x, start, stop):  
-11. toupper( ):  
-12. tolower( ):  
-13. mean( ):  
-14. median( ):  
-15. sum( ):  
+#3. floor( ): 
+?floor()
+floor(5.9)
+floor(2.9)
 
-### Other Functions 
-16. all( ):  
-17. any( ):  
-18. apropos( ):  
-19. find( ):
-20. diff( ):
+#4. trunc( ):
+?trunc()
+trunc(5.9)
+trunc(5.1)
+
+#5. max( ):  
+#6. min( ):
+#7. unique( ):   
+#8. round( ):  
+#9. signif( ):
+
+#Character Functions  
+#10. substr(x, start, stop):  
+?substr()
+string <- "Data Mining"
+substr(string, start = 1, stop = 4)
+substr(string, start = 6, stop = 11)
+
+#11. toupper( ):  
+?toupper()
+toupper(string)  
+
+#12. tolower( ):  
+?tolower()
+tolower(string)
+
+#13. mean( ):  
+?mean()
+vector = c(5,6,7,8,9)
+mean(vector)
+
+#14. median( ):  
+?median()
+median(vector)
+
+#15. sum( ):  
+?sum()  
+sum(vector)  
+
+#Other Functions 
+#16. all( ):  
+#17. any( ):  
+#18. apropos( ):  
+#19. find( ):
+#20. diff( ):
