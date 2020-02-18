@@ -5,10 +5,9 @@
 2. ceiling( ): takes a single numeric argument x and returns a numeric vector containing the smallest integers not less than the corresponding elements of x.  
 3. floor( ): takes a single numeric argument x and returns a numeric vector containing the largest integers not greater than the corresponding elements of x.  
 4. trunc( ): takes a single numeric argument x and returns a numeric vector containing the integers formed by truncating the values in x toward 0.  
-<br>
 
 ### Character Functions  
-5. substr(x, start, stop): Extract or replace substrings in a character vector.  
+5. substr(x, start, stop): Extract or replace substrings in a character vector.
   x, text	= a character vector.  
   start, first = integer. The first element to be replaced.  
   stop, last = integer. The last element to be replaced.  
@@ -17,15 +16,16 @@
 8. mean( ): Generic function for the (trimmed) arithmetic mean.  
 9. median( ): Compute the sample median.  
 10. sum( ): Returns the sum of all the values present in its arguments.  
-<br>
 
-11. 
-12. 
-13. 
-14. 
-15. 
-16. 
-17. 
-18. 
-19. 
-20. 
+
+11. max(vector): Returns the (regular or parallel) maxima and minima of the input values.pmax*() take one or more vectors as arguments,recycle them to common length and return a single vector giving the ‘parallel’ maxima   
+12. min(vector):  
+13. unique():   
+14. round():  
+15. signif():  
+16. pow():  
+17. paste():  
+18. all():  
+19. any():  
+20. apropos():  
+21. find():  
