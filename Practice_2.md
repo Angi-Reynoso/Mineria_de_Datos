@@ -1,26 +1,22 @@
-#Funtions in R
+# Funtions in R
 
-##Funciones Numéricas
-1. abs(x) : Valor absoluto de x, abs(-7) devuelve 4.  
+## Numerical Functions  
+1. abs (x): Absolute value of x, abs (-7) returns 4.  
+2. ceiling (x): Returns the first integer greater than x, ceiling (5.3) returns 6.  
+3. floor (x): Returns the smallest first integer of x, floor (5.99) returns 5.  
+4. trunc (x): Returns the integer part of x by removing the decimals of a number, trunc (5.99) returns 5.  
+5. %%: This module operator returns the rest of an entire division, 10 %% 3 returns 1.  
 
-2. ceiling(x) : Devuelve el primer entero mayor a x, ceiling(5.3) devuelve 6.  
+## Character Functions 
+6. substr (): What the substr (x) function does is return a substring of the string we have passed to it.  
+     x: A string of characters.  
+     start: It is the first character to be returned (or overwritten).  
+     stop: The number of the last character to be returned (or overwritten).  
+7. toupper (): This function returns a string in uppercase.  
+8. tolower (): The tolower () function passes a string to lowercase.  
+9. mean (vector): To calculate the arithmetic mean or average of a vector.  
+10. mediate (vector): To obtain the median of a vector.  
 
-3. floor(x) : Devuelve el primer entero más pequeño de x, floor(5.99) devuelve 5.  
-
-4. trunc(x) : Devuelve la parte entera de x eliminando los decimales de un número, trunc(5.99) devuelve 5.  
-
-5. %% : Este operador módulo devuelve el resto de una división entera, 10%%3 devuelve 1.   
-
-##Funciones de Caracteres 
-6. substr(): Lo que hace la función substr(x) es devolver una subcadena de la cadena que le hemos pasado.    
-    x : Una cadena de caracteres.  
-    start : Es el primer carácter que se devolverá (o sobrescribirá).  
-    stop : El número del último carácter que se devolverá (o sobrescribirá).  
-
-7. toupper(): Esta función devuelve una cadena en mayúsculas.
-8. tolower(): La función tolower() pasa una cadena a minúsculas.
-9. 
-10. 
 11. 
 12. 
 13. 
