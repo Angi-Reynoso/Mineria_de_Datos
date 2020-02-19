@@ -1,8 +1,3 @@
-install.packages("gganimate")
-library(gganimate)
-install.packages("gifski")
-library(gifski)
-
 #Test the Law Of Large Numbers for N random normally distributed numbers 
 #with mean = 0, stdev=1:
 set.seed(124)
@@ -15,16 +10,23 @@ set.seed(124)
 
 #Hint:
 #1. Initialize sample size
-sample <- rnorm(100)
+N <- 100
+sample <- rnorm(N)
 
 #2. Initialize counter
 counter <- 0
 
 #3. loop for(i in rnorm(size))
 for(i in rnorm(100)){
-  print(i)
+  
+  #4. Check if the iterated variable falls
+  if(i >= -1 && i <= 1){
+    print(i)
+    #5. Increase counter if the condition is true
+    counter <- counter+1
+    
+    #6. return a result <- counter / N
+    result <- counter / N
+  }
 }
-
-#4. Check if the iterated variable falls
-#5. Increase counter if the condition is true
-#6. return a result <- counter / N
+print(result)
