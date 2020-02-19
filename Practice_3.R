@@ -59,11 +59,11 @@ mean_pat <- mean(profit.after.tax)
 mean_pat
 
 #Find The Months With Above-Mean Profit After Tax
-good.months <- _ _ mean_pat
+good.months <- profit.after.tax > mean_pat
 good.months
 
 #Bad Months Are The Opposite Of Good Months !
-bad.months <- _good.months
+bad.months <- !good.months
 bad.months
 
 #The Best Month Is Where Profit After Tax Was Equal To The Maximum
@@ -78,7 +78,7 @@ worst.month
 revenue.1000 <- round(revenue / 1000, 0)
 expenses.1000 <- round(expenses /1000, 0)
 profit.1000 <- _(_ _ _, _)
-profit.after.tax.1000 <- _(_ _ _, _)
+profit.after.tax.1000 <- round(profit.after.tax / 1000, 0)
 
 #Print Results
 revenue.1000
@@ -106,3 +106,4 @@ M <- rbind(
 )
 
 #Print The Matrix
+M
