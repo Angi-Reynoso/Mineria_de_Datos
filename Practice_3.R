@@ -51,7 +51,7 @@ profit.after.tax
 
 #Calculate The Profit Margin As Profit After Tax Over Revenue
 #Round To 2 Decimal Points, Then Multiply By 100 To Get %
-profit.margin <- _(_ / _, 2) * _
+profit.margin <- round(profit.after.tax / revenue, 2) * 100
 profit.margin
 
 #Calculate The Mean Profit After Tax For The 12 Months
