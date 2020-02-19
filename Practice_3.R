@@ -77,7 +77,7 @@ worst.month
 #Convert All Calculations To Units Of One Thousand Dollars
 revenue.1000 <- round(revenue / 1000, 0)
 expenses.1000 <- round(expenses /1000, 0)
-profit.1000 <- _(_ _ _, _)
+profit.1000 <- round(profit/1000,0)
 profit.after.tax.1000 <- round(profit.after.tax / 1000, 0)
 
 #Print Results
