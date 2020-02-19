@@ -46,7 +46,7 @@ tax <- round(0.30 * profit, 2)
 tax 
 
 #Calculate Profit Remaining After Tax Is Deducted
-profit.after.tax <- _ - _
+profit.after.tax <- profit - tax
 profit.after.tax
 
 #Calculate The Profit Margin As Profit After Tax Over Revenue
