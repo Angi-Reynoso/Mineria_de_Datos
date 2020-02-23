@@ -2,6 +2,7 @@
 <br>
 
 ~~~~
+//Declaration of function 'diagonalDifference'  
 def diagonalDifference (arr1: Array [Array [Int]]): Int = {
 ~~~~
 Here the "diagonalDifference" function is declared to receive the array and process it until the absolute diagonal 
@@ -52,6 +53,7 @@ the diagonals (d1 and d2).
 ~~~~
 
 ~~~~
+//Declaration of arrangements with square matrices  
 val arr = Array (Array (11,2,4), Array (4,5,6), Array (10,8, -12))
 val arr = Array (Array (1,2,3), Array (4,5,6), Array (7,8,9))
 val arr = Array (Array (1,2), Array (4,6))
@@ -60,6 +62,7 @@ val arr = Array (Array (1,2,3,4), Array (5,6,7,8), Array (9,10,11,12), Array (13
 These are some tests done with square matrices of different sizes to verify that the function works.  
 
 ~~~~
+//Send arrangement to function  
 diagonalDifference (arr)  
 ~~~~
 Finally, the function is called by its name: 'diagonalDifference', and in parentheses the parameter (s) is sent, in this 
