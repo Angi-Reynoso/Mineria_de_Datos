@@ -32,6 +32,7 @@ profit
 tax <- round(0.30 * profit, 2)
 tax 
 ~~~~
+> `round(val, decimal)`: Rounds the values in its first argument to the specified number of decimal places (default 0).  
 
 3. Calculate Profit Remaining After Tax Is Deducted  
 ~~~~
@@ -51,6 +52,7 @@ profit.margin
 mean_pat <- mean(profit.after.tax)
 mean_pat
 ~~~~
+> `mean( )`: Generic function for the (trimmed) arithmetic mean.  
 
 6. Find The Months With Above-Mean Profit After Tax  
 ~~~~
@@ -63,18 +65,21 @@ good.months
 bad.months <- !good.months
 bad.months
 ~~~~
+> The operator "!" allows to obtain the opposite values of a variable already calculated.  
 
 8. The Best Month Is Where Profit After Tax Was Equal To The Maximum  
 ~~~~
 best.month <- profit.after.tax == max(profit.after.tax)
 best.month
 ~~~~
+> `max( )`: Returns the maxima of the input values.  
 
 9. The Worst Month Is Where Profit After Tax Was Equal To The Minimum  
 ~~~~
 worst.month <- profit.after.tax == min(profit.after.tax)
 worst.month
 ~~~~
+> `min( )`: Returns the minima of the input values.  
 
 10. Convert All Calculations To Units Of One Thousand Dollars  
 ~~~~
@@ -112,9 +117,12 @@ M <- rbind(
   worst.month
 )
 ~~~~
+> `rbind()` function combines vector, matrix or data frame by rows.  
 
 13. Print The Matrix  
-`M`
+~~~~
+M
+~~~~
 
 ##### Screen capture with all the variables used:  
 <img src="https://github.com/Angi-Reynoso/Mineria_de_Datos/blob/Unidad_1/Images/Practice3-values.png" 
