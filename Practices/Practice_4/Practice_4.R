@@ -73,4 +73,16 @@ ChrisPaul_FTA <- c(465,357,390,524,190,384,302,323,345,321)
 KevinDurant_FTA <- c(256,256,448,524,840,675,501,750,805,171)
 DerrickRose_FTA <- c(205,205,205,250,338,555,239,0,32,187)
 DwayneWade_FTA <- c(803,535,467,771,702,652,297,425,258,370)
-#Matrix
+
+#Matrix for Free Throw Attempts
+#Bind the given vectors to form the matrix
+FreeThrowAttempts <- rbind(KobeBryant_FTA, JoeJohnson_FTA, LeBronJames_FTA, CarmeloAnthony_FTA, DwightHoward_FTA, ChrisBosh_FTA, ChrisPaul_FTA, KevinDurant_FTA, DerrickRose_FTA, DwayneWade_FTA)
+#Remove vectors - we don't need them anymore
+rm(KobeBryant_FTA, JoeJohnson_FTA, CarmeloAnthony_FTA, DwightHoward_FTA, ChrisBosh_FTA, LeBronJames_FTA, ChrisPaul_FTA, DerrickRose_FTA, DwayneWade_FTA, KevinDurant_FTA)
+#Rename the columns
+colnames(FreeThrowAttempts) <- Seasons
+#Rename the rows
+rownames(FreeThrowAttempts) <- Players
+
+#Check the matrix
+FreeThrowAttempts
