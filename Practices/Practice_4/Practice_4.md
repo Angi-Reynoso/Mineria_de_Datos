@@ -77,4 +77,23 @@ FreeThrows
 ~~~~
 
 ### 2. Create a Matrix for Free Throw Attempts  
-
+2.1. Bind the given vectors to form the matrix:  
+~~~~
+FreeThrowAttempts <- rbind(KobeBryant_FTA, JoeJohnson_FTA, LeBronJames_FTA, CarmeloAnthony_FTA, DwightHoward_FTA, ChrisBosh_FTA, ChrisPaul_FTA, KevinDurant_FTA, DerrickRose_FTA, DwayneWade_FTA)
+~~~~
+2.2. Remove vectors - we don't need them anymore:  
+~~~~
+rm(KobeBryant_FTA, JoeJohnson_FTA, CarmeloAnthony_FTA, DwightHoward_FTA, ChrisBosh_FTA, LeBronJames_FTA, ChrisPaul_FTA, DerrickRose_FTA, DwayneWade_FTA, KevinDurant_FTA)
+~~~~
+2.3. Rename the columns
+~~~~
+colnames(FreeThrowAttempts) <- Seasons
+~~~~
+2.4. Rename the rows
+~~~~
+rownames(FreeThrowAttempts) <- Players
+~~~~
+2.5. Check the matrix:  
+~~~~
+FreeThrowAttempts
+~~~~
