@@ -86,3 +86,29 @@ rownames(FreeThrowAttempts) <- Players
 
 #Check the matrix
 FreeThrowAttempts
+
+#Re-create the plotting function
+#who=1:10
+#Re-create the plotting function
+myplot <- function(z, who=1:10) {
+  matplot(t(z[who,,drop=F]), type="b", pch=15:18, col=c(1:4,6), main="Basketball Players Analysis")
+  legend("bottomleft", inset=0.01, legend=Players[who], col=c(1:4,6), pch=15:18, horiz=F)
+}
+#Visualize the new matrices
+myplot(FreeThrows)
+myplot(FreeThrowAttempts)
+
+#Part 1 - Free Throw Attempts Per Game 
+#(You will need the Games matrix)
+myplot(FreeThrowAttempts/ Games)
+#Notice how Chris Paul gets few attempts per game
+
+#Part 2 - Free Throw Accuracy
+myplot(FreeThrows/FreeThrowAttempts)
+#And yet Chris Paul's accuracy is one of the highest
+#Chances are his team would get more points if he had more FTA's
+#Also notice that Dwight Howard's FT Accuracy is extremely poor
+#compared to other players. If you recall, Dwight Howard's
+
+#Field Goal Accuracy was exceptional:
+myplot(FieldGoals/FieldGoalAttempts)
