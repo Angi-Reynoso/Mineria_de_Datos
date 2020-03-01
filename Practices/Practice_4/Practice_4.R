@@ -61,7 +61,6 @@ rownames(FreeThrows) <- Players
 #Check the matrix
 FreeThrows
 
-
 #Free Throw Attempts
 KobeBryant_FTA <- c(819,768,742,564,541,583,451,626,21,241)
 JoeJohnson_FTA <- c(330,314,379,362,269,243,186,161,195,176)
@@ -89,7 +88,6 @@ FreeThrowAttempts
 
 #Re-create the plotting function
 #who=1:10
-#Re-create the plotting function
 myplot <- function(z, who=1:10) {
   matplot(t(z[who,,drop=F]), type="b", pch=15:18, col=c(1:4,6), main="Basketball Players Analysis")
   legend("bottomleft", inset=0.01, legend=Players[who], col=c(1:4,6), pch=15:18, horiz=F)
