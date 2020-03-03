@@ -20,7 +20,7 @@
 
 #Comments:
 #Seasons are labeled based on the first year in the season
-#E.g. the 2012-2013 season is preseneted as simply 2012
+#E.g. the 2012-2013 season is presented as simply 2012
 
 #Notes and Corrections to the data:
 #Kevin Durant: 2006 - College Data Used
