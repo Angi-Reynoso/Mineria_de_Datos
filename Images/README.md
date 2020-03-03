@@ -1,1 +1,1 @@
-This folder contains all the images that exist within the .md files, in each practice.
+This folder contains all the images that exist within the README.md files, in each practice.
