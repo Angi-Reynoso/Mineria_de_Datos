@@ -108,19 +108,19 @@ FreeThrows <- rbind(KobeBryant_FT, JoeJohnson_FT, LeBronJames_FT, CarmeloAnthony
 ~~~~
 rm(KobeBryant_FT, JoeJohnson_FT, CarmeloAnthony_FT, DwightHoward_FT, ChrisBosh_FT, LeBronJames_FT, ChrisPaul_FT, DerrickRose_FT, DwayneWade_FT, KevinDurant_FT)
 ~~~~
-> `rm()`: description  
+> `rm()`: can be used to remove objects.
 
 1.3. Rename the columns:  
 ~~~~
 colnames(FreeThrows) <- Seasons
 ~~~~
-> `colnames()`: description  
+> `colnames()`: function retrieve or set the column names of matrix.
 
 1.4. Rename the rows:  
 ~~~~
 rownames(FreeThrows) <- Players
 ~~~~
-> `rownames()`: description  
+> `rownames()`:this function works very similarly to the name () function that you use when naming the value of the vector
 
 1.5. Check the matrix:  
 ~~~~
