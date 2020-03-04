@@ -76,13 +76,17 @@ stats[stats$Income.Group == "Upper middle income",]
 ~~~~
 **2.4 Filter by countrie Malta**  
 ~~~~
+stats[stats$Country.Name == "Malta",]
 ~~~~
 **2.5 Filter by countrie Qatar**  
 ~~~~
+stats[stats$Country.Name == "Qatar",]
 ~~~~
 **2.6 Filter by countrie Netherlands**  
 ~~~~
+stats[stats$Country.Name == "Netherlands",]
 ~~~~
 **2.7 Filter by countrie Norway**  
 ~~~~
+stats[stats$Country.Name == "Norway",]
 ~~~~
