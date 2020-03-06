@@ -102,7 +102,7 @@ DwayneWade_PTS <- c(2040,1397,1254,2386,2045,1941,1082,1463,1028,1331)
 ~~~~
 FreeThrows <- rbind(KobeBryant_FT, JoeJohnson_FT, LeBronJames_FT, CarmeloAnthony_FT, DwightHoward_FT, ChrisBosh_FT, ChrisPaul_FT, KevinDurant_FT, DerrickRose_FT, DwayneWade_FT)
 ~~~~
-> `rbind()`: description  
+> `rbind()`: This Function combines vector, matrix or data frame by rows. 
 
  1.2. Remove vectors - we don't need them anymore:  
 ~~~~
@@ -126,7 +126,7 @@ rownames(FreeThrows) <- Players
 ~~~~
 FreeThrows
 ~~~~
-> description
+> Just typing the name of the matrix it can be displayed
 
 <br>
 
@@ -163,14 +163,14 @@ myplot <- function(z, who=1:10) {
   legend("bottomleft", inset=0.01, legend=Players[who], col=c(1:4,6), pch=15:18, horiz=F)
 }
 ~~~~
-> description  
+> `myplot` is the variable that is used to save the function to graph
 
 ### 4. Visualize the new matrices  
 ~~~~
 myplot(FreeThrows)
 myplot(FreeThrowAttempts)
 ~~~~
-> description  
+> We use the variable `myplot` followed by the name of the matrix to be displayed 
 
 <br>
 
