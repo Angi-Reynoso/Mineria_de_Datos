@@ -42,7 +42,7 @@ For this, we first need to know the current route, the `getwd()` function allows
 Depending on the operating system, the next step is to set the path to the working directory using
 the `setwd()` function:  
 > * In the case of Windows it would be something similar to: `setwd("C:/Users/user/Documents/Dataframes")`  
-> * In the case of Mac or Linux it would be something like this: `setwd("/home/user/Documents/Dataframes)`  
+> * In the case of Mac or Linux it would be something like this: `setwd("/home/user/Documents/Dataframes")`  
 
 > To check that the route has been set correctly you can use the `getwd()` function again.  
 Finally, to load the file with the data, use the function `read.csv()`, however, unlike the previous method, 
