@@ -65,7 +65,9 @@ alt="Practice5" width="85%">
 ~~~~
 stats[stats$Income.Group == "Low income",]
 ~~~~
->
+> `stats` Is the variable where the data is located.
+The `$` is used as a select, to then indicate the column from which you want to obtain certain data
+
 **2.2 Filter countries by Lower middle income**  
 ~~~~
 stats[stats$Income.Group == "Lower middle income",]
