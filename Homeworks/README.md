@@ -129,5 +129,5 @@ Scatter plots are important in statistics because they can show the extent of co
 <img src="https://github.com/Angi-Reynoso/Mineria_de_Datos/blob/Unidad_1/Images/12.diagrama-de-dispersion.jpg" 
 alt="Practice5" width="65%">
 
-> Tipos de gráficos y diagramas para la visualización de datos - ingeniovirtual.com. (2019). ingeniovirtual.com. Retrieved March 6, 2020, from https://www.ingeniovirtual.com/tipos-de-graficos-y-diagramas-para-la-visualizacion-de-datos/
+> Tipos de gráficos y diagramas para la visualización de datos - ingeniovirtual.com. (2019). ingeniovirtual.com. Retrieved March 6, 2020, from https://www.ingeniovirtual.com/tipos-de-graficos-y-diagramas-para-la-visualizacion-de-datos/  
 > Castillero Mimenza, O. (2019). Tipos de gráficas: las diversas maneras de representar datos visualmente. Psicologiaymente.com. Retrieved 6 March 2020, from https://psicologiaymente.com/miscelanea/tipos-de-graficas
