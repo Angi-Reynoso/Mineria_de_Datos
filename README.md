@@ -8,4 +8,8 @@
 * [Practice 5](/Practices/Practice_5/README.md)  
 
 ## Unit 1 - Homeworks:  
-* [Homework 1](/Homeworks/README.md) 
+* [Quiz 1](/Homeworks/README.md#quiz-1)  
+* [Homework 2](/Homeworks/README.md#homework-2) 
+
+## Unit 1 - Exams:  
+* [Exam](/Exams/README.md) 
