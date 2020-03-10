@@ -1,5 +1,19 @@
 ## Instructions:  
 
+**Develop the following problem with R and RStudio for the knowledge extraction that the problem requires**
+
+* The World Bank was very impressed with your delivery on the previous assignment and have a new project for you.
+
+* You must generate a scatter-plot that shows the life expectancy statistics (Y-axis) and fertility rate (X-axis) by country (Country).
+
+* The scatterplot should also be classified by country (Country Regions).
+
+* You have been provided with data for 2 years: 1960 and 2013 and are required to produce a visualization for each of these years.
+
+* Some data has been provided in a CVS file, some in R vectors. The CVS file contains combined data for both years. All data manipulation must be done in R (not in Excel) because this project can be audited at a later stage.
+
+* You have also been asked to provide information on how the two periods compare.
+
 
 ## Data:  
 
