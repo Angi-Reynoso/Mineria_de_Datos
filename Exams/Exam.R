@@ -30,3 +30,31 @@ Life_Expectancy_At_Birth_2013 <- c(75.3286585365854,60.0282682926829,51.86617073
 Life60 <- data.frame(Code= Country_Code, Life.Expectancy= Life_Expectancy_At_Birth_1960)
 Life13 <- data.frame(Code= Country_Code, Life.Expectancy= Life_Expectancy_At_Birth_2013)
 
+#Merging Dataframes
+DF60 <- merge(mydf1960, Life60, by.x = "Country.Code", by.y = "Code")
+DF13 <- merge(mydf2013, Life13, by.x = "Country.Code", by.y = "Code")
+
+head(DF60)
+head(DF13)
+
+rm(df1960, df2013, Life13, Life60, mydf1960, mydf2013, Country_Code, Life_Expectancy_At_Birth_1960, Life_Expectancy_At_Birth_2013)
+
+#Visualizing Data 1960
+library(ggplot2)
+
+qplot(data = DF60, x = Fertility.Rate, y = Life.Expectancy,
+      color = Country.Name, size=I(3), shape=I(19), alpha =I(.4), 
+      main = "Life Expectancy vs Fertility Rate")
+
+qplot(data = DF60, x = Fertility.Rate, y = Life.Expectancy,
+      color = Region, size=I(3), shape=I(19), alpha =I(.4), 
+      main = "Life Expectancy vs Fertility Rate by Region (1960)")
+
+#Visualizing Data 2013
+qplot(data = DF13, x = Fertility.Rate, y = Life.Expectancy,
+      color = Country.Name, size=I(3), shape=I(19), alpha =I(.4), 
+      main = "Life Expectancy vs Fertility Rate")
+
+qplot(data = DF13, x = Fertility.Rate, y = Life.Expectancy,
+      color = Region, size=I(3), shape=I(19), alpha =I(.4), 
+      main = "Life Expectancy vs Fertility Rate by Region (2013)")
