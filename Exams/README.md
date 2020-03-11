@@ -156,3 +156,9 @@ qplot(data = DF13, x = Fertility.Rate, y = Life.Expectancy,
 alt="Life Expectancy vs Fertility Rate by Region (2013)" width="55%">
 
 ### 6. Results analysis  
+
+**Life Expectancy vs Fertility Rate 1960**
+* Analyzing the results, it was found that Europe has life expectancy (Approx 70 years) and low fertility rate and Africa with high fertility rate but with low life expectancies Approx (50 years).
+
+**Life Expectancy vs Fertility Rate 2013**
+* In 2013 Asia reached Europe in terms of life expectancy (Approx 80 years, 10 years more than in 1960), but with low fertility rate. Africa remains the opposite, having low life expectancy, however, from 1960 to 2013, its life expectancy increased approximately 10-15 and its fertility rate is still high, which means that measures are not being taken to decrease the birth seeing the situation regarding life expectancy.
