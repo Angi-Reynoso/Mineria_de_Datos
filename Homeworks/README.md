@@ -10,11 +10,93 @@
 
 # HOMEWORK 1
 ### Grammar of Graphics
+A grammar of graphics is a tool that enables us to concisely describe the components of a graphic. Such a grammar allows us to move beyond named graphics (e.g., the “scatterplot”) and gain insight into the deep structure that underlies statistical graphics.  
 
-<img src="https://github.com/Angi-Reynoso/Mineria_de_Datos/blob/Unidad_2/Images/name.jpg" 
-alt="image name" width="55%">
+The layered grammar defines the components of a plot as:  
+* a default dataset and set of mappings from variables to aesthetics,  
+* one or more layers, with each layer having one geometric object, one statistical trans-formation, one position adjustment, and optionally, one dataset and set of aesthetic mappings,  
+* one scale for each aesthetic mapping used,  
+* a coordinate system,  
+* the facet specification.  
+These components are independent, meaning that we can generally change a single component in isolation.  
+  
+The layer component is particularly important as it determines the physical representation of the data, with the combination of stat and geom defining many familiar named graphics: the scatterplot, histogram, contourplot, and so on. In practice, many plots have(at least) three layers: the data, context for the data, and a statistical summary of the data. For example, to visualize a spatial point process, we might display the points themselves, amap giving some spatial context, and the contours of a two-dimensional density estimate.  
+  
+This grammar is useful for both the user and the developer of statistical graphics. For the user, it makes it easier to iteratively update a plot, changing a single feature at a time. The grammar is also useful because it suggests the high-level aspects of a plot that can be changed, giving us a framework to think about graphics, and hopefully shortening the distance from mind to paper. It also encourages the use of graphics customized to a particular problem rather than relying on generic named graphics.  
+  
+For the developer, it makes it much easier to create new capabilities. You only need to add the one component that you need, and you can continue to use all the other existing components. For example, you can add a new statistical transformation, and continue to use the existing scales and geoms. It is also useful for discovering new types of graphics,as the grammar defines the parameter space of statistical graphics.  
+  
+#### I. LAYERS  
+Layers are responsible for creating the objects that we perceive on the plot. A layer is composed of four parts:  
+1. **Data and aesthetic mapping**  
+Data are obviously a critical part of the plot, but it is important to remember that they are independent from the other components: we can construct a graphic that can be applied to multiple datasets. Data are what turns an abstract graphic into a concrete graphic. Along with the data, we need a specification of which variables are mapped to which aesthetics. For example, we might map weight to  x position, height to y position, and age to size. The details of the mapping are described by the scales.  
+  
+2. **A statistical transformation (stat)**  
+A statistical transformation, or stat, transforms the data, typically by summarizing them in some manner. For example, a useful stat is the smoother, which calculates the mean of y, conditional on x, subject to some restriction that ensures smoothness.  
+A stat takes a dataset as input and returns a dataset as output, and so a stat can add new variables to the original dataset. It is possible to map aesthetics to these new variables.  
+The statistical method used by a stat should be conditional on the coordinate system.  
+  
+3. **A geometric object (geom)**  
+Geometric  objects,  or geoms  for  short,  control  the  type  of  plot  that  you  create.  For example,  using  a  point  geom  will  create  a  scatter plot,  whereas  using  a  line  geom  will create a line plot. We can classify geoms by their dimensionality:  
+    * 0d: point, text,  
+    * 1d: path, line (ordered path),  
+    * 2d: polygon, interval.  
 
->
+    Geometric objects are an abstract component and can be rendered in different ways.  
+Geoms are mostly general purpose, but do require certain outputs from a statistic.  
+Every  geom  has  a  default  statistic,  and  every  statistic  a  default  geom.  For  example, the bin statistic defaults to using the bar geom to produce a histogram. Overriding these defaults will still produce a valid plot, but it may violate graphical conventions. Each geom can only display certain aesthetics. For example, a point geom has position, color, shape, and size aesthetics. A bar geom has position, height, width, and fill color. Different parameterizations may be useful.  
+  
+4. **A position adjustment**  
+Sometimes we need to tweak the position of the geometric elements on the plot, when otherwise they would obscure each other.   This is most common in bar plots, where we stack or dodge (place side-by-side) the bars to avoid overlaps. In scatter plots with  few unique x and y values, we sometimes randomly jitter the points to reduce overplotting. Wilkinson called these collision modifiers.  
+  
+#### II. SCALES  
+A scale controls the mapping from data to aesthetic attributes, and so we need one scale for each aesthetic property used in a layer. Scales are common across layers to ensure a consistent mapping from data to aesthetics. A scale is a function, and its inverse, along with a set of parameters.  
+  
+The inverse function is used to draw a guide so that you can read values from the graph. Guides are either axes (for position scales) or legends (for everything else). Most mappings have a unique inverse (i.e., the mapping function is one-to-one), but many do not. A unique inverse makes it possible to recover the original data, but this is not always desirable if we want to focus attention on a single aspect.  
+  
+Scales typically map from a single variable to a single aesthetic, but there are exceptions. For example, we can map one variable to hue and another to saturation, to create a single aesthetic, color. We can also create redundant mappings, mapping the same variable to multiple aesthetics. This is particularly useful when producing a graphic that works in both color and black and white.  
+  
+There are two types of guides: scale guides and annotation guides. In the layered grammar, the scale guides (axes and legends) are largely drawn automatically based on options supplied to the relative scales. Annotation guides, used to highlight important data points, are not needed because they can be constructed with creative use of geoms if data dependent, or if not, the underlying drawing system can be used directly. Scales are also computed somewhat differently as it is possible to map a variable produced by a statistic to an aesthetic. This requires two passes of scaling, before and after the statistical transformation.  
+  
+#### III. COORDINATE SYSTEM  
+A coordinate system, coord for short, maps the position of objects onto the plane of the plot. Position is often specified by two coordinates (x, y), but could be any number of coordinates. The Cartesian coordinate system is the most common coordinate system for two dimensions, whereas polar coordinates and various map projections are used less frequently.  
+Coordinate systems affect all position variables simultaneously and differ from scales in that they also change the appearance of the geometric objects. For example, in polar coordinates, bar geoms look like segments of a circle. Additionally, scaling is performed before statistical transformation, whereas coordinate transformations occur afterward.  
+Coordinate systems control how the axes and grid lines are drawn.  
+  
+#### IV. FACETING  
+There is also another graphical tool that turns out to be sufficiently useful that we should include it in our general framework: faceting (a more general case of the plots known as conditioned or trellis plots). Faceting makes it easy to create small multiples of different subsets of an entire dataset. This is a powerful tool when investigating whether patterns are the same or different across conditions. The  faceting specification describes which variables should be used to split up the data, and how they should be arranged.  
+
+
+<br><br>
+
+### “ggplot2” LIBRARY IN R
+The intuition behind ggplot2 is very simple. The construction of the data is done based on layers that contain certain types of information.  
+
+1. **Data**  
+The first layer is the data that we will use.  
+
+2. **Aesthetics**  
+The second layer corresponds to the mapping of the variables within the space. In this step, we use `mapping = aes()`, which will contain the variable that we will have on our x-axis and our y-axis. For `aes()` there are many more options, some of them are, for example, fill, color, shape, and alpha. All these options are a set of signs that will allow us to better translate what we want to say through our graphic. These options are usually called aesthetics or aes().  
+
+3. **Geometric object**  
+It sounds strange, but when we talk about a geom or geometric object, we are talking about the type of graph we want to make, be it a line graph, a bar graph, a histogram, a density graph, or a dot graph, or if we want to make a boxplot. This is the third layer.  
+
+4. **Faceting**  
+It is not always necessary, but it is always useful to show what you can achieve. When we use this layer, what we are looking for is to organize the geometries that we are using based on a categorical variable.  
+
+5. **Transformations**  
+Another layer that you can use is a layer that will allow you to do scale transformations on your variables. It will normally appear with the name scale_x_discrete, which will vary depending on the aesthetics that we are using within our mapping.  
+
+6. **Coordinate system**  
+Normally, we will work with an x-axis and a y-axis. There are functions in ggplot2 like `coord_flip` that will allow us to change the direction of our graph. But we can also use this type of layer when we work with geographic data or when, for example, we want to make a pie chart.  
+
+7. **Themes**  
+When we map the data, we use aesthetic options. When we want to change how the graph looks, we change the theme. This can be done through a theme, which allows you to modify issues that are not related to the content of the graphic. For example, the colors of the background or the type of letters of the axes. You can also change where the legend will be located, the location of the title, the title, the name of the axes, add annotations, etc.  
+
+
+> Hadley Wickham (2010) A Layered Grammar of Graphics, Journal of Computational and Graphical Statistics, 19:1, 3-28, DOI: 10.1198/jcgs.2009.07098  
+> Capítulo 4 Visualización de datos | AnalizaR Datos Políticos. (2019). Arcruz0.github.io. Retrieved 27 April 2020, from https://arcruz0.github.io/libroadp/dataviz.html
+
 
 <br>
 
@@ -24,5 +106,10 @@ alt="image name" width="55%">
 
 # HOMEWORK 2
 ### Geom_Jitter()
+
+
+<img src="https://github.com/Angi-Reynoso/Mineria_de_Datos/blob/Unidad_2/Images/name.jpg" 
+alt="image name" width="55%">
+
 
 >
