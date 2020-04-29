@@ -105,11 +105,143 @@ When we map the data, we use aesthetic options. When we want to change how the g
 <br>
 
 # HOMEWORK 2
-### Geom_Jitter()
+### Geom_Jitter()  
+The jitter geom is a convenient shortcut for geom_point(position = "jitter"). It adds a small amount of random variation to the location of each point, and is a useful way of handling overplotting caused by discreteness in smaller datasets.  
 
+#### Usage  
+~~~~
+geom_jitter(mapping = NULL, data = NULL, stat = "identity",  
+  position = "jitter", ..., width = NULL, height = NULL,  
+  na.rm = FALSE, show.legend = NA, inherit.aes = TRUE)  
+~~~~
 
-<img src="https://github.com/Angi-Reynoso/Mineria_de_Datos/blob/Unidad_2/Images/name.jpg" 
-alt="image name" width="55%">
+#### Arguments  
 
+<table>
+<tr>
+    <td><code>mapping</code></td>
+    <td>
+      Set of aesthetic mappings created by <code>aes()</code> or <code>aes_()</code>. If specified and <code>inherit.aes = TRUE</code> (the default), it is combined with the default mapping at the top level of the plot. You must supply mapping if there is no plot mapping.
+    </td>
+</tr>
+<tr>
+    <td><code>data</code></td>
+    <td>
+      The data to be displayed in this layer. There are three options:  
+      If NULL, the default, the data is inherited from the plot data as specified in the call to <code>ggplot()</code>.  
+      A data.frame, or other object, will override the plot data. All objects will be fortified to produce a data frame.  
+      A function will be called with a single argument, the plot data. The return value must be a data.frame, and will be used as the layer data. A function can be created from a formula (e.g. <code>~ head(.x, 10)</code>). 
+    </td>
+</tr>
+<tr>
+    <td><code>stat</code></td>
+    <td>
+      The statistical transformation to use on the data for this layer, as a string. 
+    </td>
+</tr>
+<tr>
+    <td><code>position</code></td>
+    <td>
+      Position adjustment, either as a string, or the result of a call to a position adjustment function.
+    </td>
+</tr>
+<tr>
+    <td><code>...</code></td>
+    <td>
+      Other arguments passed on to <code>layer()</code>. These are often aesthetics, used to set an aesthetic to a fixed value, like colour = "red" or size = 3. They may also be parameters to the paired geom/stat. 
+    </td>
+</tr>
+<tr>
+    <td><code>width</code></td>
+    <td>
+      Amount of vertical and horizontal jitter. The jitter is added in both positive and negative directions, so the total spread is twice the value specified here.  
+      If omitted, defaults to 40% of the resolution of the data: this means the jitter values will occupy 80% of the implied bins. Categorical data is aligned on the integers, so a width or height of 0.5 will spread the data so it's not possible to see the distinction between the categories. 
+    </td>
+</tr>
+<tr>
+    <td><code>height</code></td>
+    <td>
+      Amount of vertical and horizontal jitter. The jitter is added in both positive and negative directions, so the total spread is twice the value specified here.  
+      If omitted, defaults to 40% of the resolution of the data: this means the jitter values will occupy 80% of the implied bins. Categorical data is aligned on the integers, so a width or height of 0.5 will spread the data so it's not possible to see the distinction between the categories.
+    </td>
+</tr>
+<tr>
+    <td><code>na.rm</code></td>
+    <td>
+      If FALSE, the default, missing values are removed with a warning. If TRUE, missing values are silently removed. 
+    </td>
+</tr>
+<tr>
+    <td><code>show.legend</code></td>
+    <td>
+      logical. Should this layer be included in the legends? NA, the default, includes if any aesthetics are mapped. FALSE never includes, and TRUE always includes. It can also be a named logical vector to finely select the aesthetics to display. 
+    </td>
+</tr>
+<tr>
+    <td><code>inherit.aes</code></td>
+    <td>
+      If FALSE, overrides the default aesthetics, rather than combining with them. This is most useful for helper functions that define both data and aesthetics and shouldn't inherit behaviour from the default plot specification, e.g. <code>borders()</code>. 
+    </td>
+</tr>
+</table>
+ 
+#### Aesthetics  
+`geom_point()` understands the following aesthetics (required aesthetics are in bold):  
+* x
+* y
+* alpha
+* colour
+* fill
+* group
+* shape
+* size
+* stroke
 
->
+#### Examples  
+~~~~
+p <- ggplot(mpg, aes(cyl, hwy))
+p + geom_point()
+~~~~
+<img src="https://ggplot2.tidyverse.org/reference/geom_jitter-1.png" 
+alt="image" width="55%">
+
+~~~~
+p + geom_jitter()
+~~~~
+<img src="https://ggplot2.tidyverse.org/reference/geom_jitter-2.png" 
+alt="image" width="55%">
+
+~~~~
+# Add aesthetic mappings
+p + geom_jitter(aes(colour = class))
+~~~~
+<img src="https://ggplot2.tidyverse.org/reference/geom_jitter-3.png" 
+alt="image" width="55%">
+
+~~~~
+# Use smaller width/height to emphasise categories
+ggplot(mpg, aes(cyl, hwy)) + geom_jitter()
+~~~~
+<img src="https://ggplot2.tidyverse.org/reference/geom_jitter-4.png" 
+alt="image" width="55%">
+
+~~~~
+ggplot(mpg, aes(cyl, hwy)) + geom_jitter(width = 0.25)
+~~~~
+<img src="https://ggplot2.tidyverse.org/reference/geom_jitter-5.png" 
+alt="image" width="55%">
+
+~~~~
+# Use larger width/height to completely smooth away discreteness
+ggplot(mpg, aes(cty, hwy)) + geom_jitter()
+~~~~
+<img src="https://ggplot2.tidyverse.org/reference/geom_jitter-6.png" 
+alt="image" width="55%">
+
+~~~~
+ggplot(mpg, aes(cty, hwy)) + geom_jitter(width = 0.5, height = 0.5)
+~~~~
+<img src="https://ggplot2.tidyverse.org/reference/geom_jitter-7.png" 
+alt="image" width="55%">
+
+> Jittered points — geom_jitter. (2020). Ggplot2.tidyverse.org. Retrieved 27 April 2020, from https://ggplot2.tidyverse.org/reference/geom_jitter.html  
