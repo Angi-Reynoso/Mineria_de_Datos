@@ -9,4 +9,4 @@
 * [Homework 2](/Homeworks/README.md#homework-2) 
 
 ## Unit 2 - Exams:  
-* [Exam](/Exams/README.md) 
+
