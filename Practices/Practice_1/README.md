@@ -1,4 +1,4 @@
-# Practice 1 - Simple Linear Regression   
+# Simple Linear Regression   
 
 <br>
 
