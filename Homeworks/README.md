@@ -255,6 +255,7 @@ alt="image" width="55%">
 The p-value is actually the probability of obtaining a sample like ours, or more extreme than ours IF the null hypothesis is true. So we assume that the null hypothesis is true and then determine how "strange" our sample really is. If it's not that strange (a large p-value), then we don't change our minds about the null hypothesis. As the p-value gets smaller, we start to wonder if the null value is really true and good, maybe we should change our mind (and reject the null hypothesis).
 
 **A little more detail:**
+
 * A small p-value indicates that just by sheer luck, it would be unlikely to get a sample like the one we have if the null hypothesis is true. If this is small enough, we begin to think that we may not be very lucky, and instead our assumption that the nullity is true is incorrect. That is why we reject with a small p-value.
 
 * A large p-value indicates that it would be quite normal to obtain a sample like ours if the null hypothesis is true. As you can see, there is no reason to change your mind here as we did with a small p-value.
@@ -263,5 +264,6 @@ The approximation of the P value to aid in decision-making is quite natural sinc
 
 * A P value is the lowest level (of significance) at which the observed value of the test statistic is significant.
 * The P value is the smallest level of significance leading to the rejection of the null hypothesis Ho.
+
 
 >What is a p-value? (2012, enero 21).  Retrieved May 2 2020, from https://www.mathbootcamps.com/what-is-a-p-value/
