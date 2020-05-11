@@ -1,6 +1,8 @@
 # Index #  
 * [Homework 1: Grammar of Graphics](#homework-1)  
 * [Homework 2: Geom_Jitter()](#homework-2)  
+* [Homework 3:What is a p-value?](#homework-3)  
+
 
 <br>
 
