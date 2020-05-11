@@ -264,3 +264,4 @@ The approximation of the P value to aid in decision-making is quite natural sinc
 * A P value is the lowest level (of significance) at which the observed value of the test statistic is significant.
 * The P value is the smallest level of significance leading to the rejection of the null hypothesis Ho.
 
+>What is a p-value? (2012, enero 21).  Retrieved May 2 2020, from https://www.mathbootcamps.com/what-is-a-p-value/
