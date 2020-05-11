@@ -7,6 +7,8 @@
 ## Unit 2 - Homeworks:  
 * [Homework 1](/Homeworks/README.md#homework-1)  
 * [Homework 2](/Homeworks/README.md#homework-2) 
+* [Homework 3](/Homeworks/README.md#homework-3) 
+
 
 ## Unit 2 - Exams:  
 
