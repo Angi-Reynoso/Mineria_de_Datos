@@ -1,7 +1,8 @@
 # Index #  
 * [Homework 1: Grammar of Graphics](#homework-1)  
 * [Homework 2: Geom_Jitter()](#homework-2)  
-* [Homework 3:What is a p-value?](#homework-3)  
+* [Homework 3: What is a p-value?](#homework-3)  
+* [Homework 4: lm() and SplitRatio](#homework-4)  
 
 
 <br>
@@ -248,6 +249,8 @@ alt="image" width="55%">
 
 > Jittered points — geom_jitter. (2020). Ggplot2.tidyverse.org. Retrieved 27 April 2020, from https://ggplot2.tidyverse.org/reference/geom_jitter.html  
 
+<br>
+
 ---
 
 <br>
@@ -267,5 +270,28 @@ The approximation of the P value to aid in decision-making is quite natural sinc
 * A P value is the lowest level (of significance) at which the observed value of the test statistic is significant.
 * The P value is the smallest level of significance leading to the rejection of the null hypothesis Ho.
 
+>What is a p-value? (2012, enero 21).  Retrieved May 2 2020, from https://www.mathbootcamps.com/what-is-a-p-value/  
 
->What is a p-value? (2012, enero 21).  Retrieved May 2 2020, from https://www.mathbootcamps.com/what-is-a-p-value/
+<br>
+
+---
+
+<br>
+
+# HOMEWORK 4
+### lm()
+
+
+### SplitRatio
+
+
+> 
+
+<br>
+
+---
+
+<br>
+
+# 
+### 
