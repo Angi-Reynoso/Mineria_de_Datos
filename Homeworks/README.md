@@ -3,6 +3,7 @@
 * [Homework 2: Geom_Jitter()](#homework-2)  
 * [Homework 3: What is a p-value?](#homework-3)  
 * [Homework 4: lm() and SplitRatio](#homework-4)  
+* [Homework 5: glm()](#homework-5)  
 
 
 <br>
@@ -278,8 +279,8 @@ The approximation of the P value to aid in decision-making is quite natural sinc
 
 <br>
 
-# HOMEWORK 4
-### lm()
+# HOMEWORK 4  
+### lm()  
 lm is used to fit linear models. It can be used to carry out regression, single stratum analysis of variance and analysis of covariance (although aov may provide a more convenient interface for these).
 
 #### Usage  
@@ -290,89 +291,125 @@ lm(formula, data, subset, weights, na.action,
 ~~~~
 
 #### Arguments  
-
 <table>
 <tr>
     <td><code>formula</code></td>
     <td>
-      an object of class "formula" (or one that can be coerced to that class): a symbolic description of the model to be fitted. The details of model specification are given under ‘Details’.
+      	An object of class "formula" (or one that can be coerced to that class): a symbolic description of the model to be fitted.
     </td>
 </tr>
 <tr>
     <td><code>data</code></td>
     <td>   
-      an optional data frame, list or environment (or object coercible by as.data.frame to a data frame) containing the variables in     the model. If not found in data, the variables are taken from environment(formula), typically the environment from which lm is called.
+      	An optional data frame, list or environment (or object coercible by as.data.frame to a data frame) containing the variables in the model. If not found in data, the variables are taken from environment(formula), typically the environment from which lm is called.
     </td>
 </tr>
 <tr>
-    <td><code>Subset</code></td>
+    <td><code>subset</code></td>
     <td>
-      an optional vector specifying a subset of observations to be used in the fitting process.
+      	An optional vector specifying a subset of observations to be used in the fitting process.
     </td>
 </tr>
 <tr>
     <td><code>weights</code></td>
     <td>
-      an optional vector of weights to be used in the fitting process. Should be NULL or a numeric vector. If non-NULL, weighted least squares is used with weights weights (that is, minimizing sum(w*e^2)); otherwise ordinary least squares is used.
+      	An optional vector of weights to be used in the fitting process. Should be NULL or a numeric vector. If non-NULL, weighted least squares is used with weights weights (that is, minimizing sum(w*e^2)); otherwise ordinary least squares is used.
     </td>
 </tr>
 <tr>
     <td><code>na.action</code></td>
     <td>
-     a function which indicates what should happen when the data contain NAs. The default is set by the na.action setting of options, and is na.fail if that is unset. The ‘factory-fresh’ default is na.omit. Another possible value is NULL, no action. Value na.exclude can be useful.
+     	A function which indicates what should happen when the data contain NAs. The default is set by the na.action setting of options, and is na.fail if that is unset. The ‘factory-fresh’ default is na.omit. Another possible value is NULL, no action. Value na.exclude can be useful.
     </td>
 </tr>
 <tr>
     <td><code>width</code></td>
     <td>
-      Amount of vertical and horizontal jitter. The jitter is added in both positive and negative directions, so the total spread is twice the value specified here.  
-      If omitted, defaults to 40% of the resolution of the data: this means the jitter values will occupy 80% of the implied bins. Categorical data is aligned on the integers, so a width or height of 0.5 will spread the data so it's not possible to see the distinction between the categories. 
+      	Amount of vertical and horizontal jitter. The jitter is added in both positive and negative directions, so the total spread is twice the value specified here.<br>
+      	If omitted, defaults to 40% of the resolution of the data: this means the jitter values will occupy 80% of the implied bins. Categorical data is aligned on the integers, so a width or height of 0.5 will spread the data so it's not possible to see the distinction between the categories. 
     </td>
 </tr>
 <tr>
     <td><code>method</code></td>
     <td>
-     the method to be used; for fitting, currently only method = "qr" is supported; method = "model.frame" returns the model frame (the same as with model = TRUE, see below).
+     	The method to be used; for fitting, currently only method = "qr" is supported; method = "model.frame" returns the model frame (the same as with model = TRUE).
     </td>
 </tr>
 <tr>
     <td><code>model, x, y, qr</code></td>
     <td>
-      logicals. If TRUE the corresponding components of the fit (the model frame, the model matrix, the response, the QR decomposition) are returned.
+      	Logicals. If TRUE the corresponding components of the fit (the model frame, the model matrix, the response, the QR decomposition) are returned.
     </td>
 </tr>
 <tr>
     <td><code>singular.ok</code></td>
     <td>
-     logical. If FALSE (the default in S but not in R) a singular fit is an error.
+     	Logical. If FALSE (the default in S but not in R) a singular fit is an error.
     </td>
 </tr>
 <tr>
     <td><code>contrasts</code></td>
     <td>
-     an optional list. See the contrasts.arg of model.matrix.default. 
+     	An optional list. 
     </td>
 </tr>
   <tr>
     <td><code>offset</code></td>
     <td>
-     this can be used to specify an a priori known component to be included in the linear predictor during fitting. This should be NULL or a numeric vector of length equal to the number of cases. One or more offset terms can be included in the formula instead or as well, and if more than one are specified their sum is used.
+     	This can be used to specify an a priori known component to be included in the linear predictor during fitting. This should be NULL or a numeric vector of length equal to the number of cases. One or more offset terms can be included in the formula instead or as well, and if more than one are specified their sum is used.
     </td>
 </tr>
   <tr>
-    <td><code> ...</code></td>
+    <td><code>...</code></td>
     <td>
-	  additional arguments to be passed to the low level regression fitting functions. 
+	Additional arguments to be passed to the low level regression fitting functions. 
     </td>
 </tr>
 </table>
 
-### SplitRatio
-split divides the data in the vector x into the groups defined by f. The replacement forms replace values corresponding to such a division. unsplit reverses the effect of split.Are generic functions with default and data.frame methods. The data frame method can also be used to split a matrix into a list of matrices, and the replacement form likewise, provided they are invoked explicitly.
+<br>
+
+### SplitRatio  
+`split` divides the data in the vector x into the groups defined by f. The replacement forms replace values corresponding to such a division. unsplit reverses the effect of split.Are generic functions with default and data.frame methods. The data frame method can also be used to split a matrix into a list of matrices, and the replacement form likewise, provided they are invoked explicitly.
 
 * Split data from vector Y into two sets in predefined ratio while preserving relative ratios of different labels in Y. Used to split the data used during classification into train and test subsets. 
 
-> 
+#### Usage  
+~~~~
+sample.split( Y, SplitRatio = 2/3, group = NULL )
+~~~~
+
+#### Arguments  
+<table>
+<tr>
+    <td><code>Y</code></td>
+    <td>
+      Vector of data labels. If there are only a few labels (as is expected) than relative ratio of data in both subsets will be the same.  
+    </td>
+</tr>
+<tr>
+    <td><code>SplitRatio</code></td>
+    <td>
+      Splitting ratio:<br>
+	<ul>
+	  <li>if <code>(0<=SplitRatio<1)</code> then SplitRatio fraction of points from Y will be set to TRUE.</li>
+	  <li>if <code>(SplitRatio==1)</code> then one random point from Y will be set to TRUE. </li>
+	  <li>if <code>(SplitRatio>1)</code> then SplitRatio number of points from Y will be set to TRUE.</li>
+	</ul>
+    </td>
+</tr>
+<tr>
+    <td><code>group</code></td>
+    <td>
+      Optional vector/list used when multiple copies of each sample are present. In such a case group contains unique sample labels, marking all copies of the same sample with the same label, and the function tries to place all copies in either train or test subset. If provided than has to have the same length as Y.  
+    </td>
+</tr>
+</table>
+
+> Fitting Linear Models. (2019). R Documentation. Retrieved May 11, 2020, from http://finzi.psych.upenn.edu/R/library/stats/html/lm.html  
+	
+> Tuszynski, J. (2019). Split Data into Test and Train Set. R Documentation. Retrieved May 11, 2020, from http://finzi.psych.upenn.edu/R/library/caTools/html/sample.split.html  
+
 
 <br>
 
@@ -380,5 +417,153 @@ split divides the data in the vector x into the groups defined by f. The replace
 
 <br>
 
-# 
-### 
+
+# HOMEWORK 5  
+### glm()  
+
+#### Description
+`glm` is used to fit generalized linear models, specified by giving a symbolic description of the linear predictor and a description of the error distribution.  
+
+#### Usage  
+~~~
+glm(formula, family = gaussian, data, weights, subset,
+    na.action, start = NULL, etastart, mustart, offset,
+    control = list(...), model = TRUE, method = "glm.fit",
+    x = FALSE, y = TRUE, singular.ok = TRUE, contrasts = NULL, ...)
+~~~  
+
+#### Arguments  
+<table>
+<tr>
+    <td><code>formula</code></td>
+    <td>
+      An object of class "formula" (or one that can be coerced to that class): a symbolic description of the model to be fitted.  
+    </td>
+</tr>
+<tr>
+    <td><code>family</code></td>
+    <td>
+      A description of the error distribution and link function to be used in the model. For glm this can be a character string naming a family function, a family function or the result of a call to a family function. 
+    </td>
+</tr>
+<tr>
+    <td><code>data</code></td>
+    <td>
+      An optional data frame, list or environment (or object coercible by <code>as.data.frame</code> to a data frame) containing the variables in the model. If not found in data, the variables are taken from <code>environment(formula)</code>, typically the environment from which glm is called. 
+    </td>
+</tr>
+<tr>
+    <td><code>weights</code></td>
+    <td>
+      An optional vector of ‘prior weights’ to be used in the fitting process. Should be NULL or a numeric vector. 
+    </td>
+</tr>
+<tr>
+    <td><code>subset</code></td>
+    <td>
+      An optional vector specifying a subset of observations to be used in the fitting process. 
+    </td>
+</tr>
+<tr>
+    <td><code>na.action</code></td>
+    <td>
+      A function which indicates what should happen when the data contain NAs. The default is set by the <code>na.action</code> setting of options, and is <code>na.fail</code> if that is unset. The ‘factory-fresh’ default is <code>na.omit</code>. Another possible value is NULL, no action. Value <code>na.exclude</code> can be useful. 
+    </td>
+</tr>
+<tr>
+    <td><code>start</code></td>
+    <td>
+      Starting values for the parameters in the linear predictor. 
+    </td>
+</tr>
+<tr>
+    <td><code>etastart</code></td>
+    <td>
+      Starting values for the linear predictor. 
+    </td>
+</tr>
+<tr>
+    <td><code>mustart</code></td>
+    <td>
+      Starting values for the vector of means. 
+    </td>
+</tr>
+<tr>
+    <td><code>offset</code></td>
+    <td>
+      This can be used to specify an a priori known component to be included in the linear predictor during fitting. This should be NULL or a numeric vector of length equal to the number of cases. One or more offset terms can be included in the formula instead or as well, and if more than one is specified their sum is used. 
+    </td>
+</tr>
+<tr>
+    <td><code>control</code></td>
+    <td>
+      A list of parameters for controlling the fitting process. 
+    </td>
+</tr>
+<tr>
+    <td><code>model</code></td>
+    <td>
+      A logical value indicating whether model frame should be included as a component of the returned value. 
+    </td>
+</tr>
+<tr>
+    <td><code>method</code></td>
+    <td>
+      The method to be used in fitting the model. The default method "<code>glm.fit</code>" uses iteratively reweighted least squares (IWLS): the alternative "<code>model.frame</code>" returns the model frame and does no fitting. <br>
+User-supplied fitting functions can be supplied either as a function or a character string naming a function, with a function which takes the same arguments as <code>glm.fit</code>. If specified as a character string it is looked up from within the stats namespace. 
+    </td>
+</tr>
+<tr>
+    <td><code>x, y</code></td>
+    <td>
+      Logical values indicating whether the response vector and model matrix used in the fitting process should be returned as components of the returned value. 
+    </td>
+</tr>
+<tr>
+    <td><code>singular.ok</code></td>
+    <td>
+      Logical; if FALSE a singular fit is an error. 
+    </td>
+</tr>
+<tr>
+    <td><code>contrasts</code></td>
+    <td>
+      An optional list. 
+    </td>
+</tr>
+<tr>
+    <td><code>...</code></td>
+    <td>
+      Arguments to be used to form the default control argument if it is not supplied directly. 
+    </td>
+</tr>
+</table>
+
+#### Details  
+A typical predictor has the form response ~ terms where response is the (numeric) response vector and terms is a series of terms which specifies a linear predictor for response. For binomial and quasibinomial families the response can also be specified as a factor (when the first level denotes failure and all others success) or as a two-column matrix with the columns giving the numbers of successes and failures. A terms specification of the form first + second indicates all the terms in first together with all the terms in second with any duplicates removed.  
+
+A specification of the form first:second indicates the set of terms obtained by taking the interactions of all terms in first with all terms in second. The specification first * second indicates the cross of first and second. This is the same as first + second + first:second.  
+
+The terms in the formula will be re-ordered so that main effects come first, followed by the interactions, all second-order, all third-order and so on: to avoid this pass a terms object as the formula.  
+
+Non-NULL weights can be used to indicate that different observations have different dispersions (with the values in weights being inversely proportional to the dispersions); or equivalently, when the elements of weights are positive integers w_i, that each response y_i is the mean of w_i unit-weight observations. For a binomial GLM prior weights are used to give the number of trials when the response is the proportion of successes: they would rarely be used for a Poisson GLM.  
+
+All of weights, subset, offset, etastart and mustart are evaluated in the same way as variables in formula, that is first in data and then in the environment of formula.  
+
+#### Value  
+`glm` returns an object of class inheriting from "`glm`" which inherits from the class "`lm`". If a non-standard method is used, the object will also inherit from the class (if any) returned by that function.  
+
+The function summary (i.e., `summary.glm`) can be used to obtain or print a summary of the results and the function anova (i.e., `anova.glm`) to produce an analysis of variance table.  
+
+The generic accessor functions coefficients, effects, fitted.values and residuals can be used to extract various useful features of the value returned by `glm`.
+
+> Fitting Generalized Linear Models. (2019). R Documentation. Retrieved May 13, 2020, from https://stat.ethz.ch/R-manual/R-devel/library/stats/html/glm.html  
+
+<br>
+
+---
+
+<br>
+
+# HOMEWORK 6
+### Title
