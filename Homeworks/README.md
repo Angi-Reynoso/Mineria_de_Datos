@@ -280,10 +280,97 @@ The approximation of the P value to aid in decision-making is quite natural sinc
 
 # HOMEWORK 4
 ### lm()
+lm is used to fit linear models. It can be used to carry out regression, single stratum analysis of variance and analysis of covariance (although aov may provide a more convenient interface for these).
 
+#### Usage  
+~~~~
+lm(formula, data, subset, weights, na.action,
+   method = "qr", model = TRUE, x = FALSE, y = FALSE, qr = TRUE,
+   singular.ok = TRUE, contrasts = NULL, offset, ...)
+~~~~
+
+#### Arguments  
+
+<table>
+<tr>
+    <td><code>formula</code></td>
+    <td>
+      an object of class "formula" (or one that can be coerced to that class): a symbolic description of the model to be fitted. The details of model specification are given under ‘Details’.
+    </td>
+</tr>
+<tr>
+    <td><code>data</code></td>
+    <td>   
+      an optional data frame, list or environment (or object coercible by as.data.frame to a data frame) containing the variables in     the model. If not found in data, the variables are taken from environment(formula), typically the environment from which lm is called.
+    </td>
+</tr>
+<tr>
+    <td><code>Subset</code></td>
+    <td>
+      an optional vector specifying a subset of observations to be used in the fitting process.
+    </td>
+</tr>
+<tr>
+    <td><code>weights</code></td>
+    <td>
+      an optional vector of weights to be used in the fitting process. Should be NULL or a numeric vector. If non-NULL, weighted least squares is used with weights weights (that is, minimizing sum(w*e^2)); otherwise ordinary least squares is used.
+    </td>
+</tr>
+<tr>
+    <td><code>na.action</code></td>
+    <td>
+     a function which indicates what should happen when the data contain NAs. The default is set by the na.action setting of options, and is na.fail if that is unset. The ‘factory-fresh’ default is na.omit. Another possible value is NULL, no action. Value na.exclude can be useful.
+    </td>
+</tr>
+<tr>
+    <td><code>width</code></td>
+    <td>
+      Amount of vertical and horizontal jitter. The jitter is added in both positive and negative directions, so the total spread is twice the value specified here.  
+      If omitted, defaults to 40% of the resolution of the data: this means the jitter values will occupy 80% of the implied bins. Categorical data is aligned on the integers, so a width or height of 0.5 will spread the data so it's not possible to see the distinction between the categories. 
+    </td>
+</tr>
+<tr>
+    <td><code>method</code></td>
+    <td>
+     the method to be used; for fitting, currently only method = "qr" is supported; method = "model.frame" returns the model frame (the same as with model = TRUE, see below).
+    </td>
+</tr>
+<tr>
+    <td><code>model, x, y, qr</code></td>
+    <td>
+      logicals. If TRUE the corresponding components of the fit (the model frame, the model matrix, the response, the QR decomposition) are returned.
+    </td>
+</tr>
+<tr>
+    <td><code>singular.ok</code></td>
+    <td>
+     logical. If FALSE (the default in S but not in R) a singular fit is an error.
+    </td>
+</tr>
+<tr>
+    <td><code>contrasts</code></td>
+    <td>
+     an optional list. See the contrasts.arg of model.matrix.default. 
+    </td>
+</tr>
+  <tr>
+    <td><code>offset</code></td>
+    <td>
+     this can be used to specify an a priori known component to be included in the linear predictor during fitting. This should be NULL or a numeric vector of length equal to the number of cases. One or more offset terms can be included in the formula instead or as well, and if more than one are specified their sum is used.
+    </td>
+</tr>
+  <tr>
+    <td><code> ...</code></td>
+    <td>
+	  additional arguments to be passed to the low level regression fitting functions. 
+    </td>
+</tr>
+</table>
 
 ### SplitRatio
+split divides the data in the vector x into the groups defined by f. The replacement forms replace values corresponding to such a division. unsplit reverses the effect of split.Are generic functions with default and data.frame methods. The data frame method can also be used to split a matrix into a list of matrices, and the replacement form likewise, provided they are invoked explicitly.
 
+* Split data from vector Y into two sets in predefined ratio while preserving relative ratios of different labels in Y. Used to split the data used during classification into train and test subsets. 
 
 > 
 
