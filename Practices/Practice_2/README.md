@@ -67,8 +67,7 @@ ggplot() +
 > `aes()` describe how variables in the data are mapped to visual properties (aesthetics) of geoms.
 
 This is the result of the graph:  
-<img src="" 
-alt="Practice1" width="65%">  
+<img src="https://github.com/Angi-Reynoso/Mineria_de_Datos/blob/Unidad_2/Images/Training Set.png" width="65%">  
 
 **8. Visualising the Test set results**
 ~~~
@@ -84,7 +83,6 @@ ggplot() +
 > The previous step is repeated, only in this case the data used to make the predictions comes from the training set.  
 
 This is the result of the graph:  
-<img src="" 
-alt="Practice1" width="65%">  
+<img src="https://github.com/Angi-Reynoso/Mineria_de_Datos/blob/Unidad_2/Images/Test Set.png" width="65%">  
 
 **Conclusion:**  
