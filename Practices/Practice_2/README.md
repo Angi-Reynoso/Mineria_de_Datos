@@ -36,9 +36,7 @@ Before proceeding to the next step, it is necessary to install the caTools libra
 
 **5. Fitting Multiple Linear Regression to the Training set**
 ~~~
-regressor = lm(formula = Profit ~ R.D.Spend,
-               data = dataset)
-summary(regressor) 
+regressor = lm(formula = Profit ~ R.D.Spend,data = dataset)summary(regressor) 
 ~~~
 > We will make a multiple linear regression model that will fit our training dataset. `lm()` function is used to do so. 
 > `lm()` is used to fit linear models. It can be used to carry out regression, single stratum analysis of variance and analysis of covariance.
