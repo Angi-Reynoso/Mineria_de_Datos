@@ -12,6 +12,7 @@
 * [Homework 3](/Homeworks/README.md#homework-3) 
 * [Homework 4](/Homeworks/README.md#homework-4) 
 * [Homework 5](/Homeworks/README.md#homework-5)
+* [Homework 6](/Homeworks/README.md#homework-6)
 
 
 ## Unit 2 - Exams:  
