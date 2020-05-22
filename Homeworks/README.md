@@ -4,6 +4,7 @@
 * [Homework 3: What is a p-value?](#homework-3)  
 * [Homework 4: lm() and SplitRatio](#homework-4)  
 * [Homework 5: glm()](#homework-5)  
+* [Homework 6: ElemStatLearn Library](#homework-6)  
 
 
 <br>
@@ -566,4 +567,60 @@ The generic accessor functions coefficients, effects, fitted.values and residual
 <br>
 
 # HOMEWORK 6
+### ElemStatLearn Library
+The package ‘ElemStatLearn’ was removed from the CRAN repository, although formerly available versions can be obtained from the archive.  
+
+This library contents Data Sets, Functions and Examples from the Book: "The Elements of Statistical Learning, Data Mining, Inference, and Prediction" by Trevor Hastie, Robert Tibshirani and Jerome Friedman.  
+&nbsp;
+
+#### About the Content of the Book  
+Statistical learning plays a key role in many areas of science, finance and industry. Here are some examples of learning problems:  
+* Predict whether a patient, hospitalized due to a heart attack, will have a second heart attack. The prediction is to be based on demographic, diet and clinical measurements for that patient.  
+* Predict the price of a stock in 6 months from now, on the basis of company performance measures and economic data.  
+* Identify the numbers in a handwritten ZIP code, from a digitized image.  
+* Estimate the amount of glucose in the blood of a diabetic person,from the infrared absorption spectrum of that person’s blood.  
+* Identify the risk factors for prostate cancer, based on clinical and demographic variables.  
+
+The science of learning plays a key role in the fields of statistics, data mining and artificial intelligence, intersecting with areas of engineering and other disciplines.This book is about learning from data. In a typical scenario,we have an outcome measurement, usually quantitative (such as a stock price) or categorical (such as heart attack/no heart attack), that we wish to predict based on a set of features (such as diet and clinical measurements). We have a training set of data, in which we observe the outcome and feature measurements for a set of objects (such as people). Using this data we build a prediction model, or learner, which will enable us to predict the outcome for new unseen objects. A good learner is one that accurately predicts such an outcome.  
+&nbsp;
+
+#### Who Should Read this Book
+In the author's words: “This book is designed for researchers and students in a broad variety of fields: statistics, artificial intelligence, engineering, finance and others. We expect that the reader will have had at least one elementary course in statistics, covering basic topics including linear regression. We have not attempted to write a comprehensive catalog of learning methods, but rather to describe some of the most important techniques. Equally notable, we describe the underlying concepts and considerations by which a researcher can judge a learning method. We have tried to write this book in an intuitive fashion, emphasizing concepts rather than mathematical details. As statisticians, our exposition will naturally reflect our backgrounds and areas of expertise. However in the past eight years we have been attending conferences in neural networks, data mining and machine learning, and our thinking has been heavily influenced by these exciting fields. This influence is evident in our current research, and in this book.”  
+&nbsp;
+
+#### Topics, Methods and Models seen in the book  
+1. Overview of Supervised Learning  
+2. Linear Methods for Regression  
+3. Linear Methods for Classification  
+4. Basis Expansions and Regularization  
+5. Kernel Smoothing Methods  
+6. Model Assessment and Selection  
+7. Model Inference and Averaging  
+8. Additive Models, Trees, and Related Methods  
+9. Boosting and Additive Trees  
+10. Neural Networks  
+11. Support Vector Machines and Flexible Discriminants  
+12. Prototype Methods and Nearest-Neighbors  
+13. Unsupervised Learning  
+14. Random Forests  
+15. Ensemble Learning  
+16. Undirected Graphical Models  
+17. High-Dimensional Problems: p ≫ N  
+  
+> CRAN - Package ElemStatLearn. (2020). Cran.r-project.org. Retrieved May 21, 2020, from https://cran.r-project.org/web/packages/ElemStatLearn/index.html  
+
+> The ElemStatLearn package. It's crantastic!. (2019). Crantastic.org. Retrieved May 21, 2020, from https://crantastic.org/packages/ElemStatLearn  
+
+> Elements of Statistical Learning: data mining, inference, and prediction.2nd Edition.. Web.stanford.edu. Retrieved May 21, 2020, from https://web.stanford.edu/~hastie/ElemStatLearn/  
+
+> Hastie, T., Tibshirani, R., & Friedman, J. (2009). The Elements of Statistical Learning: Data Mining, Inference, and Prediction. (2nd ed., pp. 10-21, 26). Stanford, California: Springer. Recovered from https://web.stanford.edu/~hastie/ElemStatLearn/printings/ESLII_print12.pdf  
+
+
+<br>
+
+---
+
+<br>
+
+# HOMEWORK 7
 ### Title
