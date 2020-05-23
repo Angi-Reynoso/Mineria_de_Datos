@@ -61,6 +61,10 @@ ggplot(training_set, aes(x=EstimatedSalary, y=Purchased)) + geom_point() +
 ggplot(training_set, aes(x=Age, y=Purchased)) + geom_point() + 
   stat_smooth(method="glm", method.args=list(family="binomial"), se=FALSE)
 ~~~  
+>  
+
+The following graphs are obtained:  
+<img src="https://github.com/Angi-Reynoso/Mineria_de_Datos/blob/Unidad_2/Images/ggplot2_Training.png" width="100%"> 
 
 * **8.2 Test Set**  
 ~~~
@@ -70,6 +74,10 @@ ggplot(test_set, aes(x=EstimatedSalary, y=Purchased)) + geom_point() +
 ggplot(test_set, aes(x=Age, y=Purchased)) + geom_point() + 
   stat_smooth(method="glm", method.args=list(family="binomial"), se=FALSE)
 ~~~  
+>  
+
+The following graphs are obtained:  
+<img src="https://github.com/Angi-Reynoso/Mineria_de_Datos/blob/Unidad_2/Images/ggplot2_Test.png" width="100%"> 
 
 **9. Visualization using the ElemStatLearn library**  
 
@@ -94,7 +102,11 @@ plot(set[, -3],
 contour(X1, X2, matrix(as.numeric(y_grid), length(X1), length(X2)), add = TRUE)
 points(grid_set, pch = '.', col = ifelse(y_grid == 1, 'springgreen3', 'tomato'))
 points(set, pch = 21, bg = ifelse(set[, 3] == 1, 'green4', 'red3'))
-~~~
+~~~  
+>  
+
+The following graph is obtained:  
+<img src="https://github.com/Angi-Reynoso/Mineria_de_Datos/blob/Unidad_2/Images/Practice4_Training.png" width="65%"> 
 
 * **9.2 Visualising the Test Set results**
 ~~~
@@ -113,5 +125,9 @@ plot(set[, -3],
 contour(X1, X2, matrix(as.numeric(y_grid), length(X1), length(X2)), add = TRUE)
 points(grid_set, pch = '.', col = ifelse(y_grid == 1, 'springgreen3', 'tomato'))
 points(set, pch = 21, bg = ifelse(set[, 3] == 1, 'green4', 'red3'))
-~~~
+~~~  
+>  
+
+The following graph is obtained:  
+<img src="https://github.com/Angi-Reynoso/Mineria_de_Datos/blob/Unidad_2/Images/Practice4_Test.png" width="65%"> 
 
