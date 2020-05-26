@@ -118,7 +118,7 @@ X2 = seq(min(set[, 2]) - 1, max(set[, 2]) + 1, by = 0.01)
 grid_set = expand.grid(X1, X2)
 colnames(grid_set) = c('Age', 'EstimatedSalary')
 prob_set = predict(classifier, type = 'response', newdata = grid_set)
-y_grid = ifelse(prob_set > 0.5, 1, 0) #Regiones de la poblacion que comprara y que no
+y_grid = ifelse(prob_set > 0.5, 1, 0)
 plot(set[, -3],
      main = 'Logistic Regression (Training set)',
      xlab = 'Age', ylab = 'Estimated Salary',
