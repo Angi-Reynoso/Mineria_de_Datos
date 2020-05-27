@@ -15,3 +15,25 @@ test_set = subset(dataset, split == FALSE)
 
 training_set[-3] = scale(training_set[-3])
 test_set[-3] = scale(test_set[-3])
+
+install.packages('e1071')
+library(e1071)
+classifier1 = svm(formula = Purchased ~ .,
+                  data = training_set,
+                  type = 'C-classification',
+                  kernel = 'linear')
+
+classifier2 = svm(formula = Purchased ~ .,
+                  data = training_set,
+                  type = 'C-classification',
+                  kernel = 'polynomial')
+
+classifier3 = svm(formula = Purchased ~ .,
+                  data = training_set,
+                  type = 'C-classification',
+                  kernel = 'radial')
+
+classifier4 = svm(formula = Purchased ~ .,
+                  data = training_set,
+                  type = 'C-classification',
+                  kernel = 'sigmoid')
