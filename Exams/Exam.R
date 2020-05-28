@@ -18,6 +18,7 @@ df.movies = movies[(movies$Genre == "action"|movies$Genre == "adventure"
                     |movies$Studio == "Fox"|movies$Studio == "Paramount Pictures"
                     |movies$Studio == "Sony"|movies$Studio == "Universal"
                     |movies$Studio == "WB"),]
+
 windowsFonts("Comic Sans MS" = windowsFont("Comic Sans MS"))
 
 
