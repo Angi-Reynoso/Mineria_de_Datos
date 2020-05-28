@@ -12,7 +12,7 @@ Your task is to create the code that will recreate the same table making it look
 You will be provided with a new data set.  
 
 **Hint**  
-Please note that not all Genres and Studio are used.  
+Please keep in mind that not all Genres and Studio are used.  
 You will need to filter your dataframe after importing the csv file.  
 <br>
 
