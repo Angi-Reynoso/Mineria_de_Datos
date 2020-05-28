@@ -21,7 +21,6 @@ df.movies = movies[(movies$Genre == "action"|movies$Genre == "adventure"
 
 windowsFonts("Comic Sans MS" = windowsFont("Comic Sans MS"))
 
-
 library(ggplot2)
 ggplot(df.movies, aes(x = Genre, y = GrossPercentageUS)) + 
   geom_jitter(aes(color = Studio, size = Budget_Millions)) + 
