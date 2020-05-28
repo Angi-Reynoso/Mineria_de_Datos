@@ -11,7 +11,6 @@ colnames(movies) <- c("DayWeek", "Director", "Genre", "MovieTitle",
                       "ProfitPercentage", "Runtime", "US", "GrossPercentageUS")
 head(movies)
 
-
 df.movies = movies[(movies$Genre == "action"|movies$Genre == "adventure"
                     |movies$Genre == "animation"|movies$Genre == "comedy"
                     |movies$Genre == "drama")&(movies$Studio == "Buena Vista Studios"
