@@ -146,7 +146,7 @@ The following is the resulting graph:
 plot(classifier)
 text(classifier, cex=0.75)
 ~~~  
-> We use the `plot` function again to graph the tree created by the model, and the `text` function to add the conditions used as well as the results of each branch.  
+> We use the `plot` function again to graph the tree created by the model, and the `text` function to add the conditions used as well as the results of each branch (`cex` is used to indicate the font size).  
 > **Note:** in order for the tree to be well graphed, it is necessary to run the code again, but omitting the part for data transformation (Feature Scaling).  
 
 The following is the resulting graph:  
