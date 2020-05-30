@@ -60,7 +60,7 @@ classifier = svm(formula = Class ~ .,
 ~~~  
 > First it is necessary to install and import the e1071 library in order to use the SVM function.  
 > `svm` is used to train a support vector machine. It can be used to carry out general regression and classification, as well as density estimation. The following arguments are necessary:  
->   * _formula_: The variable to predict (Purchased), and the characteristics to take as the basis for the prediction ('.' means that they will all be used).  
+>   * _formula_: The variable to predict (Class), and the characteristics to take as the basis for the prediction ('.' means that they will all be used).  
 >   * _data_: data set to use (training).  
 >   * _type_: svm can be used as a classification machine, as a regression machine, or for novelty detection. Depending of whether 'y' is a factor or not, the default setting for type is C-classification or eps-regression, respectively, but may be overwritten by setting an explicit value.  
 >   * _kernel_: The mathematical function used to do the data transformation in SVM is known as `kernel`, and there are 4 different types that can be applied, each with different algorithms and parameters: Linear, Polynomial, Radial Basis or Gaussian, and Sigmoid.  
