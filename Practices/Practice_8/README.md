@@ -40,7 +40,7 @@ test_set[-3] = scale(test_set[-3])
 > `scale` is generic function whose default method centers and/or scales the columns of a numeric matrix.  
 > It is used to transform, give scala meaning to data, and help make the algorithm lighter; in this case we indicate that we want to apply the changes to all the columns except the prediction column.  
 
-**6. Fitting Random Forest Classification to the Training set**  #######
+**6. Fitting Random Forest Classification to the Training set**  
 ~~~
 install.packages('randomForest')
 library(randomForest)
