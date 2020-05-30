@@ -49,8 +49,7 @@ classifier = randomForest(x = training_set[-3],
                           y = training_set$Purchased,
                           ntree = 10)
 ~~~  
-> 
-First it is necessary to install and import the randomForest library, which helps us to use the function of the same name (randomForest).  
+> First it is necessary to install and import the randomForest library, which helps us to use the function of the same name (randomForest).  
 > `randomForest` implements Breiman's random forest algorithm (based on Breiman and Cutler's original Fortran code) for classification and regression. It can also be used in unsupervised mode for assessing proximities among data points. To use it the following arguments are needed:  
 >   * _x_: a data frame or a matrix of predictors, or a formula describing the model to be fitted. In this case we specify the dataframe to use (training_set [-3]).  
 >   * _y_: a response vector. If a factor, classification is assumed, otherwise regression is assumed. If omitted, randomForest will run in unsupervised mode.  
