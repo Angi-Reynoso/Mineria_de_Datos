@@ -118,6 +118,7 @@ points(set, pch = 21, bg = ifelse(set[, 3] == 1, 'green4', 'red3'))
 > Again the `points` function is used; in this case to add the training data as filled points on the graph. Given a condition, if this is true, the filling of these points will be 'green', and if not, it will be 'red'.
 
 The following is the resulting graph:
+
 <img src="https://github.com/Angi-Reynoso/Mineria_de_Datos/blob/Unidad_2/Images/ExamU3 - Training.png" width="65%">  
 
 **10. View the results of the Test Set**
@@ -139,6 +140,7 @@ points(set, pch = 21, bg = ifelse(set[, 3] == 1, 'green4', 'red3'))
 > The process carried out in the previous step is repeated, only this time the test data will be used.
 
 The following is the resulting graph:
+
 <img src = "https://github.com/Angi-Reynoso/Mineria_de_Datos/blob/Unidad_2/Images/ExamU3 - Test.png" width = "65%">
 
 **Conclusion**
