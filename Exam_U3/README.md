@@ -1,16 +1,16 @@
-## Instrucciones 
-Desarrolle el siguiente problema con R y RStudio para la extracción de conocimiento que el problema requiere.  
-Implementar el modelo de clasificación Naive Bayes con el conjunto de datos Social_Network_Ads.csv y utilizando la librería e1071 con la función naiveBayes().  
-Una vez que se obtenga el clasificador hacer el análisis de visualización de datos correspondiente.  
-Al finalizar el desarrollo explicar detalladamente en que consiste el modelo de clasificación Naive Bayes y también la explicación detallada correspondiente a visualización de datos.  
+## Instructions
+Develop the following problem with R and RStudio for the knowledge extraction that the problem requires.
+Implement the Naive Bayes classification model with the Social_Network_Ads.csv dataset and using the e1071 library with the naiveBayes () function.
+Once the classifier is obtained, make the corresponding data visualization analysis.
+At the end of the development, explain in detail what the Naive Bayes classification model consists of and also the detailed explanation corresponding to data visualization.
 
-**Naive Bayes**  
-Naive Bayes es un algoritmo de aprendizaje automático supervisado basado en el teorema de Bayes que se utiliza para resolver problemas de clasificación siguiendo un enfoque probabilístico. Se basa en la idea de que las variables predictoras de un modelo de Machine Learning son independientes entre sí. Lo que significa que el resultado de un modelo depende de un conjunto de variables independientes que no tienen nada que ver entre sí.  
+** Naive Bayes **
+Naive Bayes is a supervised machine learning algorithm based on Bayes' theorem that is used to solve classification problems using a probabilistic approach. It is based on the idea that the predictor variables of a Machine Learning model are independent of each other. Which means that the result of a model depends on a set of independent variables that have nothing to do with each other.
 
 <br>
 
-## Solución  
-**1. Establecer el directorio de trabajo**  
+## Solution
+**1. Set working directory **  
 ~~~
 getwd()
 setwd("C:/Users/GitHub/DataMining/Examen U3")
@@ -22,17 +22,17 @@ getwd()
 dataset = read.csv('Social_Network_Ads.csv')
 dataset = dataset[3:5]
 ~~~  
-> Cargamos el archivo con el dataset e indicamos que solo queremos trabajar con las columnas de la 3 a la 5.
+> The file was loaded with the dataset and we indicate that we only want to work with columns from 3 to 5.
 
-**3. Codificar la característica de destino como factor**  
+**3. Coding the target characteristic as a factor** 
 ~~~
 dataset$Purchased = factor(dataset$Purchased, levels = c(0, 1))
 ~~~  
-> Con la función factor, especificamos la columna del dataset que queremos predecir.  
-> `factor` se usa para codificar un vector como factor.  
->   * `levels` es un vector opcional de los valores únicos (como cadenas de caracteres) que x podría haber tomado.  
+> With the factor function, we specify the column of the dataset that we want to predict.
+> `factor` is used to encode a vector as a factor.
+> * `levels` is an optional vector of the unique values (such as strings) that x could have taken.  
 
-**4. Dividir el dataset en Training set y Test set**  
+**4. Divide the dataset into Training set and Test set** 
 ~~~
 install.packages('caTools')
 library(caTools)
@@ -41,44 +41,44 @@ split = sample.split(dataset$Purchased, SplitRatio = 0.75)
 training_set = subset(dataset, split == TRUE)
 test_set = subset(dataset, split == FALSE)
 ~~~  
-> Instalamos y cargamos la librería caTools.  
-> Creamos una semilla para aleatorizar los datos.  
-> Dividimos los datos en un 75% para capacitación y un 25% para pruebas, y creamos los subconjuntos de entrenamiento y pruebas.  
+> We install and load the caTools library.
+> We create a seed to randomize the data.
+> We divided the data into 75% for training and 25% for testing, and created the training and testing subsets.
 
-**5. Escalado de características**  
+**5. Features scaling**  
 ~~~
 training_set[-3] = scale(training_set[-3])
 test_set[-3] = scale(test_set[-3])
 ~~~  
-> `scale` es una función genérica cuyo método predeterminado centra y/o escala las columnas de una matriz numérica.  
-> Se utiliza para transformar, dar significado a los datos en Scala y ayudar a aclarar el algoritmo; en este caso, indicamos que queremos aplicar los cambios a todas las columnas excepto la de predicción.  
+> `scale` is a generic function whose default method centers and / or scales the columns of a numeric array.
+>  It is used to transform, give meaning to data in Scala, and help clarify the algorithm; In this case, we indicate that we want to apply the changes to all columns except the prediction column.
 
-**6. Ajustar Naive Bayes al Training set**  
+**6. Fit Naive Bayes to Training set**  
 ~~~
 install.packages('e1071')
 library(e1071)
 classifier = naiveBayes(formula = Purchased ~ .,
                  data = training_set)
 ~~~  
-> Primero es necesario instalar e importar la librería `e1071` para usar la función `naiveBayes()`.  
-> `naiveBayes` calcula las probabilidades a-posteriores condicionales de una variable de clase categórica dadas variables predictoras independientes usando la regla de Bayes. Los siguientes argumentos son necesarios:  
->   * _formula_: La variable a predecir (Purchased) y las características a tomar como base para la predicción ('.' significa que todas serán utilizadas).  
->   * _data_: Es el conjunto de datos a utilizar (training_set).  
+> First you need to install and import the `e1071` library to use the` naiveBayes () `function.
+> `naiveBayes` calculates the conditional posterior probabilities of a variable of categorical class given independent predictor variables using Bayes' rule. The following arguments are necessary:
+> * _formula_: The variable to predict (Purchased) and the characteristics to take as the basis for the prediction ('.' means that they will all be used).
+> * _data_: It is the data set to use (training_set). 
 
-**7. Predecir los resultados del Test Set**  
+**7. Predict Test Set Results**  
 ~~~
 y_pred = predict(classifier, newdata = test_set[-3])
 y_pred
 ~~~  
-> Usando la función `predict`, se calculan las probabilidades de las predicciones que realizará el modelo, tomando como referencia los datos del clasificador creado en el paso anterior e indicando los datos que se utilizarán (test_set menos la columna 3).  
+> Using the `predict` function, the probabilities of the predictions that the model will make are calculated, taking as a reference the data of the classifier created in the previous step and indicating the data to be used (test_set minus column 3).
 
-**8. Hacer la Matriz de Confusión**  
+** 8. Make the Confusion Matrix **
 ~~~
 cm = table(test_set[, 3], y_pred)
 cm
 ~~~  
-> Usando la función `table`, se crea una matriz de confusión para las predicciones hechas en el paso anterior.  
-> Estos son los resultados:  
+> Using the `table` function, a confusion matrix is created for the predictions made in the previous step.
+> These are the results:
 ~~~
 y_pred
      0  1
@@ -86,7 +86,7 @@ y_pred
   1  7 29
 ~~~
 
-**9. Visualizar los resultados del Training Set**  
+**9. View the results of the Training Set**
 ~~~
 library(ElemStatLearn)
 set = training_set
@@ -95,14 +95,13 @@ X2 = seq(min(set[, 2]) - 1, max(set[, 2]) + 1, by = 0.01)
 grid_set = expand.grid(X1, X2)
 colnames(grid_set) = c('Age', 'EstimatedSalary')
 ~~~  
-> Cargamos la librería `ElemStatLearn` para poder visualizar los datos de entrenamiento.  
-> Con la función `seq`, se crean las variables X1 y X2, agregando los valores de inicio (min), final (max) e incremento (by).  
-> Se crea una cuadrícula de todas las combinaciones de las variables X1 y X2 utilizando la función `expand.grid`, y se nombran sus columnas.  
-
+> We load the `ElemStatLearn` library to view the training data.
+> With the `seq` function, variables X1 and X2 are created, adding the start (min), end (max) and increment (by) values.
+> A grid of all combinations of variables X1 and X2 is created using the `expand.grid` function, and their columns are named.
 ~~~
 y_grid = predict(classifier, grid_set)
 ~~~  
-> La función `predict` se usa nuevamente para calcular la probabilidad de la predicción, en este caso tomando los datos de la cuadrícula creada en el paso anterior (grid_set).  
+> The `predict` function is used again to calculate the probability of the prediction, in this case taking the data from the grid created in the previous step (grid_set).
 
 ~~~
 plot(set[, -3],
@@ -113,15 +112,15 @@ contour(X1, X2, matrix(as.numeric(y_grid), length(X1), length(X2)), add = TRUE)
 points(grid_set, pch = '.', col = ifelse(y_grid == 1, 'springgreen3', 'tomato'))
 points(set, pch = 21, bg = ifelse(set[, 3] == 1, 'green4', 'red3'))
 ~~~  
-> La función `plot` se usa para graficar en función de los datos en las dos primeras columnas del conjunto; se asigna el nombre del gráfico (main) y, los nombres y límites de los ejes (xlab, xlim).  
-> La función `contour` se usa para agregar una línea de contorno al gráfico ya creado.  
-> La función `points` se usa para agregar una figura al gráfico, en este caso un rectángulo de 0.01 pulgadas por lado, de color 'verde' si se cumple la condición especificada, y si no, de color 'rojo'.  
-> Nuevamente se usa la función `points`; en este caso para agregar los datos de entrenamiento como puntos rellenos en el gráfico. Dada una condición, si esto es cierto, el llenado de dichos puntos será 'verde', y si no, será 'rojo'.  
+> The `plot` function is used to graph based on the data in the first two columns of the set; the name of the graph (main) and the names and limits of the axes (xlab, xlim) are assigned.
+> The `contour` function is used to add a contour line to the already created graph.
+> The `points` function is used to add a figure to the graph, in this case a rectangle of 0.01 inches per side, colored 'green' if the specified condition is met, and if not, colored 'red'.
+> Again the `points` function is used; in this case to add the training data as filled points on the graph. Given a condition, if this is true, the filling of these points will be 'green', and if not, it will be 'red'.
 
-El siguiente es el gráfico resultante:  
+The following is the resulting graph:
 <img src="https://github.com/Angi-Reynoso/Mineria_de_Datos/blob/Unidad_2/Images/ExamU3 - Training.png" width="65%">  
 
-**10. Visualizar los resultados del Test Set**
+** 10. View the results of the Test Set**
 ~~~
 library(ElemStatLearn)
 set = test_set
@@ -137,11 +136,11 @@ contour(X1, X2, matrix(as.numeric(y_grid), length(X1), length(X2)), add = TRUE)
 points(grid_set, pch = '.', col = ifelse(y_grid == 1, 'springgreen3', 'tomato'))
 points(set, pch = 21, bg = ifelse(set[, 3] == 1, 'green4', 'red3'))
 ~~~  
-> El proceso realizado en el paso anterior se repite, solo que esta vez se utilizarán los datos de prueba.  
+> The process carried out in the previous step is repeated, only this time the test data will be used.
 
-El siguiente es el gráfico resultante:  
-<img src="https://github.com/Angi-Reynoso/Mineria_de_Datos/blob/Unidad_2/Images/ExamU3 - Test.png" width="65%">  
+The following is the resulting graph:
+<img src = "https://github.com/Angi-Reynoso/Mineria_de_Datos/blob/Unidad_2/Images/ExamU3 - Test.png" width = "65%">
 
-**Conclusión**  
-En ambas gráficas se puede ver que el número de predicciones erróneas fue mínimo, lo que nos muestra que el nivel de exactitud del modelo es bastante bueno.  
-Si observamos los resultados obtenidos de la matriz de confusión, podemos ver que, con respecto a los datos de la prueba, el nivel de exactitud del modelo fue aproximadamente del 86%, es decir, de 100 predicciones, 86 fueron correctas y solo 14 fueron erróneas (7 falsos positivos y 7 falsos negativos).
+**Conclusion**
+In both graphs it can be seen that the number of erroneous predictions was minimal, which shows us that the level of accuracy of the model is quite good.
+If we look at the results obtained from the confusion matrix, we can see that, with respect to the test data, the level of accuracy of the model was approximately 86%, that is, out of 100 predictions, 86 were correct and only 14 were wrong (7 false positives and 7 false negatives).
