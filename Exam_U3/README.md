@@ -141,6 +141,6 @@ points(set, pch = 21, bg = ifelse(set[, 3] == 1, 'green4', 'red3'))
 The following is the resulting graph:  
 <img src = "https://github.com/Angi-Reynoso/Mineria_de_Datos/blob/Unidad_2/Images/ExamU3 - Test.png" width = "65%">
 
-**Conclusion**
+**Conclusion**  
 In both graphs it can be seen that the number of erroneous predictions was minimal, which shows us that the level of accuracy of the model is quite good.  
 If we look at the results obtained from the confusion matrix, we can see that, with respect to the test data, the level of accuracy of the model was approximately 86%, that is, out of 100 predictions, 86 were correct and only 14 were wrong (7 false positives and 7 false negatives).  
