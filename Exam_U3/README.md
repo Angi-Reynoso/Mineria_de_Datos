@@ -17,7 +17,7 @@ setwd("C:/Users/GitHub/DataMining/Examen U3")
 getwd()
 ~~~  
 
-**2. Importar el dataset**  
+**2. Import the dataset**  
 ~~~
 dataset = read.csv('Social_Network_Ads.csv')
 dataset = dataset[3:5]
