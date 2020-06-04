@@ -10,7 +10,7 @@ Naive Bayes is a supervised machine learning algorithm based on Bayes' theorem t
 <br>
 
 ## Solution
-**1. Set working directory **  
+**1. Set working directory**  
 ~~~
 getwd()
 setwd("C:/Users/GitHub/DataMining/Examen U3")
@@ -120,7 +120,7 @@ points(set, pch = 21, bg = ifelse(set[, 3] == 1, 'green4', 'red3'))
 The following is the resulting graph:
 <img src="https://github.com/Angi-Reynoso/Mineria_de_Datos/blob/Unidad_2/Images/ExamU3 - Training.png" width="65%">  
 
-** 10. View the results of the Test Set**
+**10. View the results of the Test Set**
 ~~~
 library(ElemStatLearn)
 set = test_set
