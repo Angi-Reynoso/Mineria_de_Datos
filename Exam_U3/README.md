@@ -97,7 +97,7 @@ colnames(grid_set) = c('Age', 'EstimatedSalary')
 ~~~  
 > Cargamos la librería `ElemStatLearn` para poder visualizar los datos de entrenamiento.  
 > Con la función `seq`, se crean las variables X1 y X2, agregando los valores de inicio (min), final (max) e incremento (by).  
-> Se crea una cuadrícula de todas las combinaciones de las variables X1 y x2 utilizando la función `expand.grid`, y se nombran sus columnas.  
+> Se crea una cuadrícula de todas las combinaciones de las variables X1 y X2 utilizando la función `expand.grid`, y se nombran sus columnas.  
 
 ~~~
 y_grid = predict(classifier, grid_set)
