@@ -4,7 +4,7 @@ Implement the Naive Bayes classification model with the Social_Network_Ads.csv d
 Once the classifier is obtained, make the corresponding data visualization analysis.
 At the end of the development, explain in detail what the Naive Bayes classification model consists of and also the detailed explanation corresponding to data visualization.
 
-** Naive Bayes **
+**Naive Bayes**  
 Naive Bayes is a supervised machine learning algorithm based on Bayes' theorem that is used to solve classification problems using a probabilistic approach. It is based on the idea that the predictor variables of a Machine Learning model are independent of each other. Which means that the result of a model depends on a set of independent variables that have nothing to do with each other.
 
 <br>
