@@ -55,8 +55,10 @@ plot(1:10,
 
 The resulting graph is as follows:
  
- <img src = "https://github.com/Angi-Reynoso/Mineria_de_Datos/blob/Unidad_3/Images/ExamU4 - Elbow Method.png" width = "65%">  
+<img src = "https://github.com/Angi-Reynoso/Mineria_de_Datos/blob/Unidad_3/Images/ExamU4 - Elbow Method.png" width = "65%">  
+
 > As a result, it is obtained that the optimal cluster number is 3; This can be seen in the graph through the small "fluctuation" that exists on this point, compared to the direction that the rest of the line has.
+
 
 **4. Fit K-Means to the dataset**
 ~~~
@@ -106,7 +108,7 @@ clusplot(dataset,
 > * "0" = disabled.
 > * "1" = draw on top.
 > * "2" = draw below.
-> * _shade_ = Put ​​shading inside the group figures (diagonal lines).
+> * _shade_ = Put shading inside the group figures (diagonal lines).
 > * _color_ = Use different colors for each group.
 > * _labels_ = Type of labels to use for groups.
 > * "2" = Data and group numbers.
@@ -119,6 +121,7 @@ clusplot(dataset,
 > * _ylab_ = Title of the y axis.
 
 The resulting graph is as follows:
+
 <img src = "https://github.com/Angi-Reynoso/Mineria_de_Datos/blob/Unidad_3/Images/ExamU4 - Petal.png" width = "65%">
 
 ### Conclusion
